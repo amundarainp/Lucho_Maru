@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 De Lucho para Maru 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Partículas de corazones flotantes -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Pantalla de bienvenida -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <h1 class="title-main">Para Mi Amor</h1>
+            <div class="heart-animation">
+                <div class="heart"></div>
+            </div>
+            <h2 class="subtitle">Maru ❤️</h2>
+            <p class="welcome-text">Preparé algo especial para ti...</p>
+            <button class="btn-start" onclick="startExperience()">Abrir mi regalo 💝</button>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container" id="mainContainer">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">Lucho & Maru</h1>
+            <div class="date">San Valentín 2026</div>
+        </header>
+
+        <!-- Navegación -->
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showSection('home')">
+                <span>🏠</span> Inicio
+            </button>
+            <button class="nav-btn" onclick="showSection('carta')">
+                <span>💌</span> Carta
+            </button>
+            <button class="nav-btn" onclick="showSection('galeria')">
+                <span>📸</span> Galería
+            </button>
+            <button class="nav-btn" onclick="showSection('juegos')">
+                <span>🎮</span> Juegos
+            </button>
+            <button class="nav-btn" onclick="showSection('sorpresas')">
+                <span>🎁</span> Sorpresas
+            </button>
+        </nav>
+
+        <!-- Sección Home -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2 class="hero-title">Feliz San Valentín, Mi Amor</h2>
+                <div class="love-counter">
+                    <div class="counter-item">
+                        <div class="counter-number" id="daysCounter">0</div>
+                        <div class="counter-label">Días Juntos</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="hoursCounter">0</div>
+                        <div class="counter-label">Horas de Amor</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="momentsCounter">∞</div>
+                        <div class="counter-label">Momentos Especiales</div>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p class="quote">"Cada día a tu lado es mi favorito"</p>
+                    <p class="quote-author">- Lucho</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Carta de Amor -->
+        <section id="carta" class="section">
+            <div class="love-letter">
+                <h2 class="section-title">Mi Carta Para Ti</h2>
+                <div class="letter-envelope" id="envelope" onclick="openLetter()">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <p>Haz click para abrir 💌</p>
+                    </div>
+                </div>
+                <div class="letter-content" id="letterContent">
+                    <div class="letter-paper">
+                        <h3>Mi amor Maru,</h3>
+                        <p>Cada día a tu lado es un regalo que atesoro en mi corazón. Eres la luz que ilumina mis mañanas y la paz que me acompaña cada noche.</p>
+                        <p>En este San Valentín quiero que sepas que eres el amor de mi vida, mi compañera, mi mejor amiga y mi todo.</p>
+                        <p>Gracias por cada sonrisa, cada abrazo, cada momento compartido. Gracias por elegirme cada día.</p>
+                        <p>Te amo más de lo que las palabras pueden expresar.</p>
+                        <p class="letter-signature">Con todo mi amor,<br><span>Lucho 💕</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Galería -->
+        <section id="galeria" class="section">
+            <h2 class="section-title">Nuestros Momentos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openPhotoModal(1)">
+                    <img src="assets/1.jpeg" alt="Momento 1">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(2)">
+                    <img src="assets/2.jpeg" alt="Momento 2">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(3)">
+                    <img src="assets/3.jpeg" alt="Momento 3">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(4)">
+                    <img src="assets/4.jpeg" alt="Momento 4">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(5)">
+                    <img src="assets/5.jpeg" alt="Momento 5">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(6)">
+                    <img src="assets/6.jpeg" alt="Momento 6">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(7)">
+                    <img src="assets/7.jpeg" alt="Momento 7">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(8)">
+                    <img src="assets/8.jpeg" alt="Momento 8">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(9)">
+                    <img src="assets/9.jpeg" alt="Momento 9">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(10)">
+                    <img src="assets/10.jpeg" alt="Momento 10">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(11)">
+                    <img src="assets/11.jpeg" alt="Momento 11">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openPhotoModal(12)">
+                    <img src="assets/12.jpeg" alt="Momento 12">
+                    <div class="gallery-overlay">
+                        <span>Ver foto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Juegos -->
+        <section id="juegos" class="section">
+            <h2 class="section-title">Juegos del Amor</h2>
+            <div class="games-container">
+                
+                <!-- Juego 1: Quiz del Amor -->
+                <div class="game-card">
+                    <h3>💘 Quiz del Amor</h3>
+                    <div id="quizGame" class="game-content">
+                        <div class="quiz-question" id="quizQuestion">
+                            <p class="question-text"></p>
+                            <div class="quiz-options"></div>
+                        </div>
+                        <div class="quiz-result" id="quizResult"></div>
+                        <button class="btn-game" onclick="startQuiz()">Comenzar Quiz</button>
+                    </div>
+                </div>
+
+                <!-- Juego 2: Memoria de Parejas -->
+                <div class="game-card">
+                    <h3>🎴 Memoria del Amor</h3>
+                    <div id="memoryGame" class="game-content">
+                        <div class="memory-stats">
+                            <span>Movimientos: <span id="moves">0</span></span>
+                            <span>Parejas: <span id="pairs">0</span>/6</span>
+                        </div>
+                        <div class="memory-grid" id="memoryGrid"></div>
+                        <button class="btn-game" onclick="startMemoryGame()">Nuevo Juego</button>
+                    </div>
+                </div>
+
+                <!-- Juego 3: Ruleta del Amor -->
+                <div class="game-card">
+                    <h3>🎡 Ruleta del Amor</h3>
+                    <div id="wheelGame" class="game-content">
+                        <div class="wheel-container">
+                            <canvas id="wheelCanvas" width="300" height="300"></canvas>
+                            <div class="wheel-pointer"></div>
+                        </div>
+                        <div class="wheel-result" id="wheelResult"></div>
+                        <button class="btn-game" onclick="spinWheel()">Girar Ruleta</button>
+                    </div>
+                </div>
+
+                <!-- Juego 4: Adivina la Fecha -->
+                <div class="game-card">
+                    <h3>📅 Adivina la Fecha</h3>
+                    <div id="dateGame" class="game-content">
+                        <div class="date-question" id="dateQuestion">
+                            <p class="question-text"></p>
+                            <input type="date" id="dateInput" class="date-input">
+                        </div>
+                        <div class="date-result" id="dateResult"></div>
+                        <button class="btn-game" onclick="startDateGame()">Comenzar</button>
+                        <button class="btn-game" onclick="checkDate()" id="checkDateBtn" style="display:none;">Verificar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Sorpresas -->
+        <section id="sorpresas" class="section">
+            <h2 class="section-title">Sorpresas Para Ti</h2>
+            <div class="surprises-container">
+                
+                <!-- Sorpresa 1: Caja de Recuerdos -->
+                <div class="surprise-box">
+                    <h3>📦 Caja de Recuerdos</h3>
+                    <div class="memory-boxes">
+                        <div class="memory-box" onclick="revealMemory(1)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Nuestro primer beso 💋</div>
+                        </div>
+                        <div class="memory-box" onclick="revealMemory(2)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Tu sonrisa me enamora cada día ✨</div>
+                        </div>
+                        <div class="memory-box" onclick="revealMemory(3)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Amo cómo me miras 👀</div>
+                        </div>
+                        <div class="memory-box" onclick="revealMemory(4)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Cada aventura contigo es perfecta 🌍</div>
+                        </div>
+                        <div class="memory-box" onclick="revealMemory(5)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Eres mi persona favorita 💕</div>
+                        </div>
+                        <div class="memory-box" onclick="revealMemory(6)">
+                            <div class="memory-front">🎁</div>
+                            <div class="memory-back">Para siempre juntos ∞</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sorpresa 2: Razones de Amor -->
+                <div class="surprise-box">
+                    <h3>💝 Razones por las que te amo</h3>
+                    <div class="reasons-container">
+                        <button class="btn-reason" onclick="showReason()">Descubre una razón ❤️</button>
+                        <div class="reason-display" id="reasonDisplay"></div>
+                    </div>
+                </div>
+
+                <!-- Sorpresa 3: Mensaje Secreto -->
+                <div class="surprise-box">
+                    <h3>🔐 Mensaje Secreto</h3>
+                    <div class="secret-message">
+                        <p>Resuelve el código:</p>
+                        <div class="code-puzzle">
+                            <div class="code-hint">💕 = T, 🌹 = A, ⭐ = M, 🎵 = O</div>
+                            <div class="code-text">💕 🌹 ⭐ 🎵</div>
+                        </div>
+                        <input type="text" id="secretInput" class="secret-input" placeholder="Escribe la respuesta...">
+                        <button class="btn-game" onclick="checkSecret()">Verificar</button>
+                        <div id="secretResult" class="secret-result"></div>
+                    </div>
+                </div>
+
+                <!-- Sorpresa 4: Generador de Promesas -->
+                <div class="surprise-box">
+                    <h3>🤝 Mis Promesas</h3>
+                    <div class="promises-container">
+                        <button class="btn-promise" onclick="showPromise()">Generar Promesa 💍</button>
+                        <div class="promise-display" id="promiseDisplay"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal para fotos -->
+    <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+        <button class="modal-nav prev" onclick="event.stopPropagation(); prevPhoto()">❮</button>
+        <button class="modal-nav next" onclick="event.stopPropagation(); nextPhoto()">❯</button>
+    </div>
+
+    <!-- Control de música -->
+    <div class="music-control">
+        <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
