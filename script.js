@@ -127,11 +127,18 @@ function openLetter() {
   const envelope = document.getElementById("envelope");
   const letterContent = document.getElementById("letterContent");
 
-  envelope.classList.add("opened");
-
-  setTimeout(() => {
-    letterContent.classList.add("show");
-  }, 600);
+  // Si ya está abierta, la cierra
+  if (envelope.classList.contains("opened")) {
+    envelope.classList.remove("opened");
+    letterContent.classList.remove("show");
+  } else {
+    // Si está cerrada, la abre
+    envelope.classList.add("opened");
+    
+    setTimeout(() => {
+      letterContent.classList.add("show");
+    }, 600);
+  }
 }
 
 function closeLetter() {
